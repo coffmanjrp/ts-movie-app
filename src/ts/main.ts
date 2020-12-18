@@ -7,7 +7,7 @@ const main = document.querySelector('#main .container') as HTMLElement;
 const form = document.getElementById('form') as HTMLFormElement;
 const search = document.getElementById('search') as HTMLInputElement;
 
-function getClassByRate(vote) {
+function getClassByRate(vote: string | number) {
   if (vote >= 8) {
     return 'green';
   }
@@ -17,10 +17,10 @@ function getClassByRate(vote) {
   return 'red';
 }
 
-function showMovies(movies) {
+function showMovies(movies: HTMLElement[]) {
   main.innerHTML = '';
 
-  movies.forEach((movie) => {
+  movies.forEach((movie: HTMLElement) => {
     const { title, poster_path, vote_average, overview } = movie;
 
     const movieEl = document.createElement('div');
