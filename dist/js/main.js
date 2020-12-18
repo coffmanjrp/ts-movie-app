@@ -39,7 +39,7 @@ var API_KEY = '2aa716ddcb8a286f03dced0e007bd161';
 var API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + API_KEY + "&page=1";
 var IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 var SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query=\"";
-var main = document.querySelector('#main .container');
+var main = document.getElementById('main');
 var form = document.getElementById('form');
 var search = document.getElementById('search');
 function getClassByRate(vote) {

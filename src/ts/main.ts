@@ -3,7 +3,7 @@ const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`;
 
-const main = document.querySelector('#main .container') as HTMLElement;
+const main = document.getElementById('main') as HTMLElement;
 const form = document.getElementById('form') as HTMLFormElement;
 const search = document.getElementById('search') as HTMLInputElement;
 
