@@ -54,10 +54,16 @@ function getClassByRate(vote) {
 function showMovies(movies) {
     main.innerHTML = '';
     movies.forEach(function (movie) {
-        var title = movie.title, poster_path = movie.poster_path, vote_average = movie.vote_average, overview = movie.overview;
+        var data = {
+            title: movie.title,
+            posterPath: movie.poster_path,
+            voteAverage: movie.vote_average,
+            overview: movie.overview,
+        };
+        var title = data.title, posterPath = data.posterPath, voteAverage = data.voteAverage, overview = data.overview;
         var movieEl = document.createElement('div');
         movieEl.classList.add('movie');
-        movieEl.innerHTML = "<img src=\"" + (IMG_PATH + poster_path) + "\" alt=\"" + title + "\" />\n    <div class=\"movie-info\">\n      <h3>" + title + "</h3>\n      <span class=\"" + getClassByRate(vote_average) + "\">" + vote_average + "</span>\n    </div>\n    <div class=\"overview\">\n      <h3>Overview</h3>\n      <p>" + overview + "</p>\n    </div>\n    ";
+        movieEl.innerHTML = "<img src=\"" + (IMG_PATH + posterPath) + "\" alt=\"" + title + "\" />\n    <div class=\"movie-info\">\n      <h3>" + title + "</h3>\n      <span class=\"" + getClassByRate(voteAverage) + "\">" + voteAverage + "</span>\n    </div>\n    <div class=\"overview\">\n      <h3>Overview</h3>\n      <p>" + overview + "</p>\n    </div>\n    ";
         main.appendChild(movieEl);
     });
 }
