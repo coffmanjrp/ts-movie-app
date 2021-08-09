@@ -17,19 +17,32 @@ function getClassByRate(vote: string | number) {
   return 'red';
 }
 
-function showMovies(movies: HTMLElement[]) {
+type Movies = {
+  title: string;
+  poster_path: string;
+  vote_average: string;
+  overview: string;
+};
+
+function showMovies(movies: Movies[]) {
   main.innerHTML = '';
 
-  movies.forEach((movie: HTMLElement) => {
-    const { title, poster_path, vote_average, overview } = movie;
+  movies.forEach((movie: Movies) => {
+    const data = {
+      title: movie.title,
+      posterPath: movie.poster_path,
+      voteAverage: movie.vote_average,
+      overview: movie.overview,
+    };
+    const { title, posterPath, voteAverage, overview } = data;
 
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
 
-    movieEl.innerHTML = `<img src="${IMG_PATH + poster_path}" alt="${title}" />
+    movieEl.innerHTML = `<img src="${IMG_PATH + posterPath}" alt="${title}" />
     <div class="movie-info">
       <h3>${title}</h3>
-      <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+      <span class="${getClassByRate(voteAverage)}">${voteAverage}</span>
     </div>
     <div class="overview">
       <h3>Overview</h3>
