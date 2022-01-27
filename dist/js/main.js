@@ -35,10 +35,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var API_KEY = '2aa716ddcb8a286f03dced0e007bd161';
-var API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + API_KEY + "&page=1";
+var API_KEY = 'YOUR_API_KEY';
+var API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=".concat(API_KEY, "&page=1");
 var IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-var SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query=\"";
+var SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=".concat(API_KEY, "&query=\"");
 var main = document.getElementById('main');
 var form = document.getElementById('form');
 var search = document.getElementById('search');
@@ -63,7 +63,7 @@ function showMovies(movies) {
         var title = data.title, posterPath = data.posterPath, voteAverage = data.voteAverage, overview = data.overview;
         var movieEl = document.createElement('div');
         movieEl.classList.add('movie');
-        movieEl.innerHTML = "<img src=\"" + (IMG_PATH + posterPath) + "\" alt=\"" + title + "\" />\n    <div class=\"movie-info\">\n      <h3>" + title + "</h3>\n      <span class=\"" + getClassByRate(voteAverage) + "\">" + voteAverage + "</span>\n    </div>\n    <div class=\"overview\">\n      <h3>Overview</h3>\n      <p>" + overview + "</p>\n    </div>\n    ";
+        movieEl.innerHTML = "<img src=\"".concat(IMG_PATH + posterPath, "\" alt=\"").concat(title, "\" />\n    <div class=\"movie-info\">\n      <h3>").concat(title, "</h3>\n      <span class=\"").concat(getClassByRate(voteAverage), "\">").concat(voteAverage, "</span>\n    </div>\n    <div class=\"overview\">\n      <h3>Overview</h3>\n      <p>").concat(overview, "</p>\n    </div>\n    ");
         main.appendChild(movieEl);
     });
 }
