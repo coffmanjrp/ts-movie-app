@@ -63,7 +63,7 @@ function showMovies(movies) {
         var title = data.title, posterPath = data.posterPath, voteAverage = data.voteAverage, overview = data.overview;
         var movieEl = document.createElement('div');
         movieEl.classList.add('movie');
-        movieEl.innerHTML = "<img src=\"".concat(IMG_PATH + posterPath, "\" alt=\"").concat(title, "\" />\n    <div class=\"movie-info\">\n      <h3>").concat(title, "</h3>\n      <span class=\"").concat(getClassByRate(voteAverage), "\">").concat(voteAverage, "</span>\n    </div>\n    <div class=\"overview\">\n      <h3>Overview</h3>\n      <p>").concat(overview, "</p>\n    </div>\n    ");
+        movieEl.innerHTML = "<img src=\"" + (IMG_PATH + poster_path) + "\" alt=\"" + title + "\" />\n    <div class=\"movie-info\">\n      <h3>" + title + "</h3>\n      <span class=\"" + getClassByRate(vote_average) + "\">" + vote_average + "</span>\n    </div>\n    <div class=\"overview\">\n      <h3>Overview</h3>\n      <p>" + overview + "</p>\n    </div>\n    ";
         main.appendChild(movieEl);
     });
 }
